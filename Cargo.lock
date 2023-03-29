@@ -540,7 +540,44 @@ dependencies = [
 ]
 
 [[package]]
+name = "mio"
+version = "0.8.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5b9d9a46eff5b4ff64b45a9e316a6d1e0bc719ef429cbec4dc630684212bfdf9"
+dependencies = [
+ "libc",
+ "log",
+ "wasi 0.11.0+wasi-snapshot-preview1",
+ "windows-sys",
+]
+
+[[package]]
 name = "netwatching-client"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "bincode",
+ "chrono",
+ "config",
+ "ctor",
+ "env_logger",
+ "log",
+ "netwatching-common",
+ "serde",
+ "tokio",
+]
+
+[[package]]
+name = "netwatching-common"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "log",
+ "serde",
+]
+
+[[package]]
+name = "netwatching-server"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -554,17 +591,6 @@ dependencies = [
  "rusqlite",
  "serde",
  "tokio",
-]
-
-[[package]]
-name = "netwatching-common"
-version = "0.1.0"
-
-[[package]]
-name = "netwatching-server"
-version = "0.1.0"
-dependencies = [
- "netwatching-common",
 ]
 
 [[package]]
@@ -746,6 +772,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "549b9d036d571d42e6e85d1c1425e2ac83491075078ca9a15be021c56b1641f2"
 dependencies = [
  "bitflags 2.0.2",
+ "chrono",
  "fallible-iterator",
  "fallible-streaming-iterator",
  "hashlink",
@@ -844,6 +871,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a507befe795404456341dfab10cef66ead4c041f62b8b11bbb92bffe5d0953e0"
 
 [[package]]
+name = "socket2"
+version = "0.4.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "64a4a911eed85daf18834cfaa86a79b7d266ff93ff5ba14005426219480ed662"
+dependencies = [
+ "libc",
+ "winapi",
+]
+
+[[package]]
 name = "syn"
 version = "1.0.109"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -912,8 +949,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d0de47a4eecbe11f498978a9b29d792f0d2692d1dd003650c24c76510e3bc001"
 dependencies = [
  "autocfg",
+ "libc",
+ "mio",
  "num_cpus",
  "pin-project-lite",
+ "socket2",
  "tokio-macros",
  "windows-sys",
 ]

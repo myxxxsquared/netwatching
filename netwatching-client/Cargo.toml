@@ -15,6 +15,5 @@ ctor = "0.2.0"
 env_logger = "0.10.0"
 log = "0.4.17"
 netwatching-common = { path = "../netwatching-common" }
-rusqlite = "0.29.0"
 serde = "1.0.159"
-tokio = { version = "1.27.0", features = ["macros", "rt", "rt-multi-thread"] }
+tokio = { version = "1.27.0", features = ["macros", "rt", "rt-multi-thread", "net", "time"] }

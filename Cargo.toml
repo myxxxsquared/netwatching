@@ -1,0 +1,8 @@
+
+[workspace]
+
+members = [
+    "netwatching-common",
+    "netwatching-server",
+    "netwatching-client",
+]
